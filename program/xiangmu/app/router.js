@@ -12,5 +12,11 @@ module.exports = app => {
 
   router.get('/shopjk', controller.wzhome.shopinfo);
   
-  router.get('/shopup', controller.wzhome.shopup);//管理员的接口
+  router.post('/shopup', controller.wzhome.shopup);//管理员的接口
+
+  router.post('/delshop', controller.wzhome.delshop);//删除商品
+
+  router.get('/users', controller.wzhome.users);//查询所有的用户信息
+
+  router.post('/usid', controller.wzhome.usid);//删除用户的信息
 };

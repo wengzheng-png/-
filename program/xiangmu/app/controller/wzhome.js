@@ -32,8 +32,34 @@ class HomeController extends Controller {
 
   async shopup() {  
     const { ctx } = this; 
-    var date2 = this.ctx.request.body
-    console.log(date2);
+    var date2 =await this.ctx.service.wzservice.addshops(this.ctx.request.body)
+    // console.log(date2);
+
+  
+    
+    this.ctx.body={code:200}
+  }
+
+  //删除商品的属性
+  async delshop() {  
+    const { ctx } = this; 
+    console.log(this.ctx.request.body);
+    var date =await this.ctx.service.wzservice.delshops(this.ctx.request.body)
+    this.ctx.body={code:200}
+  }
+
+   //返回前端用户的信息
+  async users() {  
+    const { ctx } = this; 
+    var date =await this.ctx.service.wzservice.findusers()
+    this.ctx.body=date
+  }
+
+  //删除用户的信息
+  async usid() {  
+    const { ctx } = this; 
+    var date =await this.ctx.service.wzservice.deluser(this.ctx.request.body)
+    this.ctx.body={code:200}
   }
 }
 

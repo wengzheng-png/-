@@ -33,6 +33,11 @@ module.exports = appInfo => {
       enable: false,
     }
   };
+  //post 传输文件大小限制
+  exports.bodyParser = {
+    jsonLimit: '5mb',
+    formLimit: '6mb',
+  };
 
   // config.security = {  //白名单和上面这个post安全传输不可以同时的设置
   // domainWhiteList:[],
