@@ -12,10 +12,36 @@ module.exports = appInfo => {
    **/
   const config = exports = {};
 
-  // use for cookie sign key, should change to your own and keep security
-  config.keys = appInfo.name + '_1606358917653_8867';
 
-  // add your middleware config here
+  config.mysql={
+  client:{
+  host:'localhost',
+  port:'3306',
+  user:'root',
+  password:'root',
+  database:'wzhost'
+  }
+  };
+
+  config.multipart = {
+  mode: 'file',
+   };
+
+
+   exports.security = {
+    csrf: {
+      enable: false,
+    }
+  };
+
+  // config.security = {  //白名单和上面这个post安全传输不可以同时的设置
+  // domainWhiteList:[],
+  // };
+
+  // use for cookie sign key, should change to your own and keep security
+  config.keys = appInfo.name + '_1606281961039_9608';
+
+  // add your middleware config herecls
   config.middleware = [];
 
   // add your user config here

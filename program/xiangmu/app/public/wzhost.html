@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>管理员操作系统</title>
+    <link rel="shotcut icon" href="./wzimg/host.png">
+    <link rel="stylesheet" href="./wzcss/host.css">
+    <script src='https://cdn.bootcdn.net/ajax/libs/axios/0.21.0/axios.js'></script>
+</head>
+<body>
+    <div class="box"> 
+        <div class="header">欢迎来到,管理员操作界面</div>
+
+        <div class="main">
+              <div class="left">
+                     <button class="btn">点击查询你所有的商品信息</button>
+                     <div class="shopsinfo"></div> 
+
+
+                     <span>flowerid</span><input class="flowerid" type="text"><br>
+                     <span>img1</span><input class="img1" type="text"><br>
+                     <span>img2</span><input class="img2" type="text"><br>
+                     <span>img3</span><input class="img3" type="text"><br>
+                     <span>img4</span><input class="img4" type="text"><br>
+                     <span>price</span><input class="price" type="text"><br>
+                     <span>huayu</span><input class="huayu" type="text"><br>
+                     <span>cailiao</span><input class="cailiao" type="text"><br>
+                     <span>baozhaung</span><input class="baozhaung" type="text"><br>
+                     <span>talk</span><input class="talk" type="text"><br>
+                     <span>sent</span><input class="sentq" type="text"><br>
+
+
+                     <button class="btn2">点击添加你的商品的信息</button>
+              </div>
+               
+              <div class="right"> 
+
+              </div> 
+        </div>
+
+ </div>
+
+     <script>
+        var shopsinfo = document.querySelector(".shopsinfo")
+        var btn = document.querySelector(".btn")
+            btn.onclick = function(){
+                axios("/shopjk").then((res)=>{
+                    console.log(res);
+                    // shopsinfo.innerHTML = res.data
+                    for(let i = 0 ; i<res.data.length;i++){
+                        var div = document.createElement("div")
+                       
+                            var span  = document.createElement("span")
+                                span.innerHTML = res.data[i].flowerid
+                            var span1  = document.createElement("span")
+                                span1.innerHTML = res.data[i].img1
+                            var span2  = document.createElement("span")
+                                span2.innerHTML = res.data[i].img2
+                            var span3  = document.createElement("span")
+                                span3.innerHTML = res.data[i].img3
+                            var span4  = document.createElement("span")
+                                span4.innerHTML = res.data[i].img4
+                            var span5  = document.createElement("span")
+                                span5.innerHTML = res.data[i].price
+                            var span6  = document.createElement("span")
+                                span6.innerHTML = res.data[i].huayu
+                            var span7  = document.createElement("span")
+                                span7.innerHTML = res.data[i].cailiao
+                            var span8  = document.createElement("span")
+                                span8.innerHTML = res.data[i].baozhang
+                            var span9  = document.createElement("span")
+                                span9.innerHTML = res.data[i].talk
+                            var span10  = document.createElement("span")
+                                span10.innerHTML = res.data[i].sent
+
+                        div.appendChild(span)
+                        div.appendChild(span1)
+                        div.appendChild(span2)
+                        div.appendChild(span3)
+                        div.appendChild(span4)
+                        div.appendChild(span5)
+                        div.appendChild(span6)
+                        div.appendChild(span7)
+                        div.appendChild(span8)
+                        div.appendChild(span9)
+                        div.appendChild(span10)
+                        shopsinfo.appendChild(div)
+                    }
+                })
+                
+            }
+     </script>
+
+
+      <script>
+          var flowerid = document.querySelector(".flowerid")
+          var img1 = document.querySelector(".img1")
+          var img2 = document.querySelector(".img2")
+          var img3 = document.querySelector(".img3")
+          var img4 = document.querySelector(".img4")
+          var price = document.querySelector(".price")
+          var huayu = document.querySelector(".huayu")
+          var cailiao = document.querySelector(".cailiao")
+          var baozhaung = document.querySelector(".baozhaung")
+          var talk = document.querySelector(".talk")
+          var sent = document.querySelector(".sent")
+
+
+          var btn2 = document.querySelector(".btn2")
+
+          btn2.onclick = function(){
+              var shopdate = new FormData()
+                  shopdate.append("flowerid",flowerid.value)
+                  shopdate.append("img1",img1.value)
+                  shopdate.append("img2",img2.value)
+                  shopdate.append("img3",img3.value)
+                  shopdate.append("img4",img4.value)
+                  shopdate.append("price",price.value)
+                  shopdate.append("huayu",huayu.value)
+                  shopdate.append("cailiao",cailiao.value)
+                  shopdate.append("baozhaung",baozhaung.value)
+                  shopdate.append("talk",talk.value)
+                  shopdate.append("sent",sent.value)
+           console.log(flowerid.value);
+                  axios("/shopup",shopdate).then((res)=>{console.log(res);})
+          }
+      </script>
+</body>
+</html>
