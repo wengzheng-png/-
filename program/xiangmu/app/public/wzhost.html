@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>管理员操作系统</title>
+    <link rel="shotcut icon" href="./wzimg/host.png">
+    <link rel="stylesheet" href="./wzcss/host.css">
+    <script src='https://cdn.bootcdn.net/ajax/libs/axios/0.21.0/axios.js'></script>
+</head>
+
+<body>
+    <div class="box">
+        <div class="header">欢迎来到,管理员操作界面</div>
+
+        <div class="main">
+            <!-- 这里是商品的操作的模块 -->
+            <div class="left">
+                <button class="btn">点击查询你所有的商品信息</button>
+                <div class="shopsinfo"></div>
+
+                <button class="btn2">点击添加你的商品的信息</button><br>
+                <span>flowerid</span><input class="flowerid" type="text" value="11"><br>
+                <span>img1</span><input class="img1" type="text" value="11"><br>
+                <span>img2</span><input class="img2" type="text" value="11"><br>
+                <span>img3</span><input class="img3" type="text" value="11"><br>
+                <span>img4</span><input class="img4" type="text" value="11"><br>
+                <span>price</span><input class="price" type="text" value="11"><br>
+                <span>huayu</span><input class="huayu" type="text" value="11"><br>
+                <span>cailiao</span><input class="cailiao" type="text" value="11"><br>
+                <span>baozhaung</span><input class="baozhaung" type="text" value="11"><br>
+                <span>talk</span><input class="talk" type="text" value="11"><br>
+                <span>sent</span><input class="sent" type="text" value="11"><br>
+
+
+                
+                <input type="text" class="rmove" placeholder="请输入你想删除的商品id在第一个biao第一列" ><button class="rebtn">删除</button>
+
+
+            </div>
+            <!--这里是查询用户的信息的模块  -->
+            <div class="right">
+                   <button class="userbtn">点击查询你所有的用户的信息</button>
+                   <div class="userdiv">
+                    <table border="2px solid balck" align="center" width="800px" cellpadding="20px" height="20px"style="text-align: center;">
+                            <tr>
+                                <td>uid</td>
+                                <td>tel</td>
+                                <td>pwd</td>
+                                <td>操作按钮</td>
+                            </tr>
+                       </table>
+                   </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        var shopsinfo = document.querySelector(".shopsinfo")
+        var btn = document.querySelector(".btn")
+        btn.onclick = function () {
+            axios("/shopjk").then((res) => {
+                console.log(res);
+                // shopsinfo.innerHTML = res.data
+                for (let i = 0; i < res.data.length; i++) {
+                    var div = document.createElement("div")
+
+                    var span = document.createElement("span")
+                    span.innerHTML = res.data[i].flowerid
+                    var span1 = document.createElement("span")
+                    span1.innerHTML = res.data[i].img1
+                    var span2 = document.createElement("span")
+                    span2.innerHTML = res.data[i].img2
+                    var span3 = document.createElement("span")
+                    span3.innerHTML = res.data[i].img3
+                    var span4 = document.createElement("span")
+                    span4.innerHTML = res.data[i].img4
+                    var span5 = document.createElement("span")
+                    span5.innerHTML = res.data[i].price
+                    var span6 = document.createElement("span")
+                    span6.innerHTML = res.data[i].huayu
+                    var span7 = document.createElement("span")
+                    span7.innerHTML = res.data[i].cailiao
+                    var span8 = document.createElement("span")
+                    span8.innerHTML = res.data[i].baozhang
+                    var span9 = document.createElement("span")
+                    span9.innerHTML = res.data[i].talk
+                    var span10 = document.createElement("span")
+                    span10.innerHTML = res.data[i].sent
+
+                    div.appendChild(span)
+                    div.appendChild(span1)
+                    div.appendChild(span2)
+                    div.appendChild(span3)
+                    div.appendChild(span4)
+                    div.appendChild(span5)
+                    div.appendChild(span6)
+                    div.appendChild(span7)
+                    div.appendChild(span8)
+                    div.appendChild(span9)
+                    div.appendChild(span10)
+                    shopsinfo.appendChild(div)
+                }
+            })
+
+        }
+    </script>
+
+
+    <script>
+        var flowerid = document.querySelector(".flowerid")
+        var img1 = document.querySelector(".img1")
+        var img2 = document.querySelector(".img2")
+        var img3 = document.querySelector(".img3")
+        var img4 = document.querySelector(".img4")
+        var price = document.querySelector(".price")
+        var huayu = document.querySelector(".huayu")
+        var cailiao = document.querySelector(".cailiao")
+        var baozhaung = document.querySelector(".baozhaung")
+        var talk = document.querySelector(".talk")
+        var sent = document.querySelector(".sent")
+
+
+        var btn2 = document.querySelector(".btn2")
+
+        btn2.onclick = function () {
+            var shopdate = new FormData()
+            //   shopdate.append("flowerid",flowerid.value)
+            shopdate.append("img1", img1.value)
+            shopdate.append("img2", img2.value)
+            shopdate.append("img3", img3.value)
+            shopdate.append("img4", img4.value)
+            shopdate.append("price", price.value)
+            shopdate.append("huayu", huayu.value)
+            shopdate.append("cailiao", cailiao.value)
+            shopdate.append("baozhaung", baozhaung.value)
+            shopdate.append("talk", talk.value)
+            shopdate.append("sent", sent.value)
+
+
+            // console.log(flowerid,img1,img2,img3,img4)//img1.value,img2.value,img3.value,img4.value);
+            axios.post("/shopup", shopdate).then((res) => { console.log(res) })
+        }
+    </script>
+
+
+    <script>
+        //删除商品的属性
+         var rmove = document.querySelector(".rmove")
+         var rebtn = document.querySelector(".rebtn")
+          
+             rebtn.onclick = function(){
+                var del = new FormData()
+                    del.append("del",rmove.value)
+                //  console.log(rmove.value);
+                axios.post("/delshop",del).then((res)=>{
+                     console.log(res);
+                })
+             }
+
+
+    </script>
+    
+    <script>
+        //查询所有的用户的信息
+        var userbtn = document.querySelector(".userbtn")
+        var table = document.querySelector("table")
+        var flag = true
+            userbtn.onclick = function(){
+                // console.log(1111);
+                table.innerHTML = ` <tr>
+                                <td>uid</td>
+                                <td>tel</td>
+                                <td>pwd</td>
+                                <td>操作按钮</td>
+                            </tr>`
+                axios("/users").then((res)=>{
+                    //  console.log(res);
+                    for(let i =0;i<res.data.length;i++){
+                         var td1 = document.createElement("td")
+                         var td2 = document.createElement("td")
+                         var td3 = document.createElement("td")
+                         var td4 = document.createElement("td")
+                             td1.innerHTML = res.data[i].uid
+                             td2.innerHTML = res.data[i].tel
+                             td3.innerHTML = res.data[i].pwd
+                             td4.innerHTML = `<button class="one">修改</button> <button class="two">删除</button>`
+                        var tr = document.createElement("tr")
+                            tr.appendChild(td1)
+                            tr.appendChild(td2)
+                            tr.appendChild(td3)
+                            tr.appendChild(td4)
+                            table.appendChild(tr)
+                    }
+                })
+            }
+
+            //数据的更改
+            table.onclick = function (e) {
+            if (e.target.className == "two") {
+                // console.log(e.target.parentElement.parentElement.firstElementChild.innerHTML);
+                   var eid = e.target.parentElement.parentElement.firstElementChild.innerHTML;
+                       var usid = new FormData()
+                           usid.append("usid",eid)
+                       axios.post("/usid",usid).then((res)=>{
+                             console.log(res);
+                       })
+                e.target.parentElement.parentElement.remove()
+            } else if (e.target.className == "one") {
+
+                if (flag) {
+                    flag = false;
+                    let father = e.target.parentElement.parentElement
+                    let son = father.children;
+                    Array.from(son).forEach((el, index) => {
+                        if (index != 3) {
+                            var text = el.innerHTML;
+                            // console.log(text);
+                            el.innerHTML = `<input type="text"  class="ttt" value ="${text}" >`
+
+                        }
+                    });
+                    e.target.innerHTML = "保存"
+                } else if (flag == false) {
+                    flag = true
+                    let input2 = document.querySelectorAll(".ttt")
+                    let father = e.target.parentElement.parentElement
+                    let son = father.children;
+                    // console.log(input2);
+
+                    Array.from(son).forEach((el, index) => {
+                            
+                        if (index != 3) {
+                            var val = input2[index].value;
+                            el.innerHTML = `${val}`
+
+                        }
+                    });
+                    e.target.innerHTML = "修改"
+                }
+
+            } else {
+
+            }
+
+        }
+
+    </script>
+</body>
+
+</html>

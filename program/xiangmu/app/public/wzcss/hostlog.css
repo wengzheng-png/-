@@ -1,0 +1,71 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background-image: url(../wzimg/timg.jfif);
+    background-color: rgba(255, 255, 100, 0.5)
+    
+}
+
+.box .wd{
+     width: 450px;
+     height: 540px;
+     background-color: rosybrown;
+     opacity: 0.7;
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     transform: translateX(-50%) translateY(-50%);
+     border-radius: 5px;
+     
+}
+
+.box .wd .text {
+    font-size: 30px;
+    color: #103898;
+    position: relative;
+    top: 20px;
+    text-align: center;
+}
+
+
+.box .wd  .inpu {
+    position: relative;
+    text-align: center;
+    top: 64px;
+
+}
+.box .wd  .inpu input {
+    width: 300px;
+    height: 30px;
+    margin: 10px 0px;
+}
+.box .wd  .inpu span {
+   padding-right: 5px;
+}
+.box .wd  .log {
+    width: 410px;
+    height: 30px;
+    background-color: #103898;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 5px;
+    color: wheat;
+    position: relative;
+    top: 120px;
+    left: 20px;
+}
+.box .wd  .forget{
+    width: 410px;
+    height: 30px;
+    background-color:#103898;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 5px;
+    color: wheat;
+    position: relative;
+    top: 130px;
+    left: 20px;
+}

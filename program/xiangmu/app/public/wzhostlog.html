@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>管理员登录页面</title>
+    <link rel="stylesheet" href="./wzcss/hostlog.css">
+    <script src='https://cdn.bootcdn.net/ajax/libs/axios/0.21.0/axios.js'></script>
+</head>
+<body>
+    <div class="box">
+         <div class="wd">
+             <div class="text">管理员登录</div> 
+
+             <div class="inpu">
+                 <span>管理员账号</span><input id="zhanghao" name="zhanghao" type="text" placeholder="请输入你的账号" value="110"><br>
+                 <span>管理员密码</span><input id="pwd" type="password" name="pwd" placeholder="请输入你的密码" value="123">
+             </div>
+             
+             <div class="log">登录</div>
+             <div class="forget">忘记密码</div>
+         </div>
+    </div>
+
+
+    <script>
+         
+          var denglu  = document.querySelector(".log")
+              denglu.onclick = function(){
+                    var zhanghao = document.querySelector("#zhanghao")
+                    var pwd = document.querySelector("#pwd")
+                    
+                    var foo= new FormData();
+                        foo.append("zhanghao",zhanghao.value)
+                        foo.append("pwd",pwd.value)
+
+
+                      console.log(zhanghao.value);
+                      console.log(pwd.value);
+                      console.log(foo);
+
+                    axios.post("/host",foo).then((date)=>{
+                        
+                        console.log(date);//
+                        if(date.data.code==2001){
+                            window.location.href="http://192.168.2.114:7001/public/wzhost.html"
+                        }
+                    })
+              
+              }
+    </script>
+
+</body>
+</html>
