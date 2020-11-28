@@ -1,0 +1,187 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.title {
+    position: fixed;
+    width: 1520px;
+    height:100px;
+    background-color: rgb(254,195,179);
+    position: relative;
+}
+.title p{
+    position: absolute;
+    color:CornflowerBlue;
+    font-size: 38px;
+    font-family: Tahoma,Helvetica,Arial,'宋体',sans-serif, 'Arial Narrow', Arial, sans-serif;
+    line-height: 100px;
+    left: 300px;
+    display: none;
+}
+
+.title .inp {
+    height: 30px;
+    width: 200px;
+    outline: none;
+    position: absolute;
+    right: 550px;
+    top: 30px;
+    border: orangered 1px solid;
+    border-radius: 5px;
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+.title button {
+    display: inline;
+    height: 30px;
+    width: 50px;
+    position: absolute;
+    top: 35px;
+    right: 490px;
+    background-color: orangered;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    color: #fff;
+    outline-style: none;
+}
+
+.title button:active {
+    background-color: rgb(236, 65, 3);
+}
+
+.bigbox {
+    width: 1520px;
+    height: 800px;
+    position: relative;
+    background-color:rgba(255,239,213,0.5);
+}
+
+.bigbox .box {
+    position: absolute;
+    width: 450px;
+    height: 600px;
+    background-color: #fff;
+    top: 20px;
+    right: 500px;
+    border-radius: 10px;
+    border: 2px solid #ccc;
+    background-image: url("../picture/bluebiankuang.png");
+    background-size: 500px  680px;
+    background-position: -20px -50px;
+}
+
+.box>p{
+    margin-top: 100px;
+    font-size: 22px;
+    text-align: center;
+    color: #333;
+}
+
+.headpic {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    border: 1px solid #666;
+    margin-left: 80px;
+    margin-top: 30px;
+}
+.touxiang {
+    margin-left: 20px;
+    position: relative;
+    top: 55px;
+    color: #666;
+}
+
+.nicheng {
+    margin-left: 80px;
+    position: relative;
+    display: inline-block;
+    margin-top: 30px;
+    margin-right: 20px;
+}
+
+.username {
+    box-sizing: border-box;
+    outline: none;
+    padding-left: 10px;
+    height: 30px;
+    border-radius: 5px;
+    border: 1px solid #666;
+}
+
+.sex {
+    margin-left: 80px;
+    position: relative;
+    display: inline-block;
+    margin-top: 30px;
+    margin-right: 20px;
+}
+
+.man{
+    margin-right: 10px;
+}
+
+.nan ,.nv{
+    margin-right: 5px;
+}
+
+.btn {
+    display: block;
+    width: 60px;
+    height: 30px;
+    margin: 80px auto;
+}
+.tuxing1 {
+    width: 60px;
+    height: 60px;
+    background-image: url("../picture/flower01.png");
+    background-size: 60px 60px;
+    position: absolute;
+    z-index: 1000;
+    left: 100px;
+    display: none;
+}
+.tuxing2 {
+    width: 80px;
+    height: 80px;
+    background-image: url("../picture/flower01.png");
+    background-size: 80px 80px;
+    position: absolute;
+    left: 1300px;
+    z-index: 1000;
+    display: none;
+
+}
+.tuxing3 {
+    width: 60px;
+    height: 60px;
+    background-image: url("../picture/flower02.png");
+    background-size: 60px 60px;
+    position: absolute;
+    z-index: 1000;
+    display: none;
+    left: 1100px;
+
+}
+.tuxing4 {
+    width: 50px;
+    height: 50px;
+    background-image: url("../picture/flower02.png");
+    background-size: 50px 50px;
+    position: absolute;
+    z-index: 1000;
+    display: none;
+    left: 500px;
+}
+.tuxing5 {
+    width: 100px;
+    height: 100px;
+    background-image: url("../picture/flower02.png");
+    background-size: 100px 100px;
+    position: absolute;
+    z-index: 1000;
+    display: none;
+    left: 200px;
+}

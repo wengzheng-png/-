@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../public/personcss/changeperinfo.css">
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+
+</head>
+<body>
+    
+<div class="tuxing2"></div>
+<div class="tuxing3"></div>
+<div class="tuxing4"></div>
+<div class="tuxing5"></div>
+    
+<div class="title">
+    <p class="titletxt">花之物语</p>  <input type="text" value="请输入" class="inp"><button>搜索</button>
+</div>
+
+        </div>
+    <div class="bigbox">
+        <div class="box">
+            <p>基本资料</p>
+            <div class="mycontent">
+                <span class="headpic">我的头像</span><input type="file" class="touxiang"><br>
+                <span class="nicheng">昵称</span><input type="text" value="" class="username"><br>
+                <span class="sex">性别</span><span class="nan">男</span><input type="radio" name="man" class="man"><span class="nv">女</span><input type="radio" name="man" class="man"><br>
+                <button onclick="fn()" class="btn">保存</button>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script>
+        $(document).ready(function(){
+            $(".titletxt").fadeIn(3000);
+            let tuxing1 = $(".tuxing1");
+            let tuxing2 = $(".tuxing2");
+            let tuxing3 = $(".tuxing3");
+            let tuxing4 = $(".tuxing4");
+            let tuxing5 = $(".tuxing5");
+            tuxing1.fadeIn(300);
+            tuxing2.fadeIn(600);
+            tuxing3.fadeIn(800);
+            tuxing4.fadeIn(900);
+            tuxing5.fadeIn(1000);
+            tuxing1.animate({
+                top:'800px',
+                opacity:'0.6',
+                
+            },15000)
+            tuxing2.animate({
+                top:'820px',
+                opacity:'0.5',
+                
+            },10000)
+            tuxing3.animate({
+                top:'830px',
+                opacity:'0.5',
+                
+            },9000)
+            tuxing4.animate({
+                top:'830px',
+                opacity:'0.3',
+                
+            },8000)
+            tuxing5.animate({
+                top:'800px',
+                opacity:'0.3',
+                
+            },10000)
+
+            tuxing1.fadeOut(900)
+tuxing2.fadeOut(500)
+tuxing3.fadeOut(600)
+tuxing4.fadeOut(700)
+tuxing5.fadeOut(800)
+        });
+
+
+    </script>
+</body>
+</html>

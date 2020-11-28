@@ -1,0 +1,225 @@
+*{
+    padding: 0;
+    margin: 0;
+
+}
+
+.title {
+    position: fixed;
+    width: 1520px;
+    height:100px;
+    background-color: rgb(254,195,179);
+    position: relative;
+}
+.title p{
+    position: absolute;
+    color:CornflowerBlue;
+    font-size: 38px;
+    font-family: Tahoma,Helvetica,Arial,'宋体',sans-serif, 'Arial Narrow', Arial, sans-serif;
+    line-height: 100px;
+    left: 300px;
+    display: none;
+}
+
+.title .inp {
+    height: 30px;
+    width: 200px;
+    outline: none;
+    position: absolute;
+    right: 550px;
+    top: 30px;
+    border: orangered 1px solid;
+    border-radius: 5px;
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+.title button {
+    display: inline;
+    height: 30px;
+    width: 50px;
+    position: absolute;
+    top: 35px;
+    right: 490px;
+    background-color: orangered;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    color: #fff;
+    outline-style: none;
+}
+
+.title button:active {
+    background-color: rgb(236, 65, 3);
+}
+
+.bigbox {
+    width: 1520px;
+    height: 800px;
+    position: relative;
+    background-color:rgba(255,239,213,0.5);
+}
+
+.bigbox .box {
+    position: absolute;
+    width: 450px;
+    height: 600px;
+    background-color: #fff;
+    top: 20px;
+    right: 500px;
+    border-radius: 10px;
+    border: 2px solid #ccc;
+    background-image: url("../picture/biankuang.jpg");
+    background-size: 450px  600px;
+}
+
+.bigbox .headpic {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: solid 1px #ccc;
+    margin: 0 auto;
+    margin-top: 80px;
+    margin-bottom: 30px;
+}
+
+.bigbox .nicheng,.qianming,.username,.usertxt{
+    font-size: 18px;
+}
+.bigbox .nicheng,.username {
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.bigbox .qianming,.usertxt {
+    display: inline-block;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+.bigbox .nicheng,.qianming{
+    color: #333;
+    margin-left: 80px;
+    margin-right: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.bigbox .username,.usertxt{
+    color: #666;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.myform {
+    height: 20px;
+    font-size: 20px;
+    color: #666;
+    display: inline-block;
+    margin-top: 8px;
+    margin-left: 8px;
+}
+
+.business {
+    width: 400px;
+    height: 180px;
+    background-color: rgb(230, 223, 223);
+    margin: 0 auto;
+}
+
+.business .txt-p1,
+.txt-p2,
+.txt-p3,
+.txt-p4,
+.txt-p5{
+    margin-top: 20px;
+    display: block;
+    width:80px;
+    height: 50px;
+    float: left;
+    background-color: rgb(243, 157, 168);
+    text-align: center;
+    line-height: 50px;
+    color: #666;
+    
+}
+.business .between1,
+.between2,
+.between3,
+.between4 {
+    display: block;
+    float: left;
+    color: #aaa;
+}
+
+.business::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+.myform {
+    position: relative;
+    top:10px
+}
+
+.shezhi {
+    width: 50px;
+    height: 30px;
+    font-size: 20px;
+    color: #666;
+    border: #666 2px solid;
+    border-radius: 5px;
+    background-color: rgb(235, 228, 228);
+    position: absolute;
+    bottom: 20px;
+    right: 220px;
+    text-align: center;
+}
+
+.tuxing1 {
+    width: 60px;
+    height: 60px;
+    background-image: url("../picture/flower01.png");
+    background-size: 60px 60px;
+    position: absolute;
+    z-index: 1000;
+    left: 100px;
+    display: none;
+}
+.tuxing2 {
+    width: 80px;
+    height: 80px;
+    background-image: url("../picture/flower01.png");
+    background-size: 80px 80px;
+    position: absolute;
+    left: 1300px;
+    z-index: 1000;
+    display: none;
+
+}
+.tuxing3 {
+    width: 60px;
+    height: 60px;
+    background-image: url("../picture/flower02.png");
+    background-size: 60px 60px;
+    position: absolute;
+    z-index: 1000;
+    display: none;
+    left: 1100px;
+
+}
+.tuxing4 {
+    width: 50px;
+    height: 50px;
+    background-image: url("../picture/flower02.png");
+    background-size: 50px 50px;
+    position: absolute;
+    z-index: 1000;
+    display: none;
+    left: 500px;
+}
+.tuxing5 {
+    width: 100px;
+    height: 100px;
+    background-image: url("../picture/flower02.png");
+    background-size: 100px 100px;
+    position: absolute;
+    z-index: 1000;
+    display: none;
+    left: 200px;
+}
