@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../public/personcss/changeperinfo.css">
+    <link rel="stylesheet" href="./personcssrj/changeperinfo.css">
     <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
-
+    <link rel="stylesheet" href="../public/personjsrj/changepersonrj.js">
 </head>
 <body>
     
@@ -24,9 +24,11 @@
         <div class="box">
             <p>基本资料</p>
             <div class="mycontent">
-                <span class="headpic">我的头像</span><input type="file" class="touxiang"><br>
-                <span class="nicheng">昵称</span><input type="text" value="" class="username"><br>
-                <span class="sex">性别</span><span class="nan">男</span><input type="radio" name="man" class="man"><span class="nv">女</span><input type="radio" name="man" class="man"><br>
+                <span class="headpic">我的头像</span><input type="file" class="touxiang" value=""><br>
+                <span class="nicheng">昵&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;称</span><input type="text" value="" class="username" value=""><br>
+                <span class="sex">性别</span><span class="nan">男</span><input type="radio" name="man" class="man" value="nan"><span class="nv">女</span><input type="radio" name="man" class="man" value="nv"><br>
+                <span class="birth">出生日期</span><input type="data" class="birthday" value="" name="birthday"><br>
+                <span class="gexing">个性签名</span><input type="text" class="usertxt" value="" name="usertxt"><br>
                 <button onclick="fn()" class="btn">保存</button>
             </div>
         </div>
@@ -48,27 +50,27 @@
             tuxing4.fadeIn(900);
             tuxing5.fadeIn(1000);
             tuxing1.animate({
-                top:'800px',
+                top:'700px',
                 opacity:'0.6',
                 
             },15000)
             tuxing2.animate({
-                top:'820px',
+                top:'720px',
                 opacity:'0.5',
                 
             },10000)
             tuxing3.animate({
-                top:'830px',
+                top:'730px',
                 opacity:'0.5',
                 
             },9000)
             tuxing4.animate({
-                top:'830px',
+                top:'730px',
                 opacity:'0.3',
                 
             },8000)
             tuxing5.animate({
-                top:'800px',
+                top:'700px',
                 opacity:'0.3',
                 
             },10000)
@@ -79,6 +81,8 @@ tuxing3.fadeOut(600)
 tuxing4.fadeOut(700)
 tuxing5.fadeOut(800)
         });
+
+
 
 
     </script>

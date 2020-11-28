@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
-    <link rel="stylesheet" href="./personcss/personcss.css">
+    <link rel="stylesheet" href="./personcssrj/personcss.css">
+    <link rel="stylesheet" href="../public/personjsrj/personrj.js">
 </head>
 <body>
 <div class="tuxing1"></div>
@@ -32,7 +33,7 @@
      <a></p><span class="txt-p5">售后<span class="between4">|</span></span></a>
   </div>
   
-  <div class="shezhi">设置</div>
+  <a href="http://192.168.43.83:7001/public/changeperinfo.html"><div class="shezhi">设置</div></a>
 </div>
     </div>
     <script>
@@ -45,36 +46,42 @@
             let tuxing5 = $(".tuxing5");
             tuxing1.fadeIn(300);
             tuxing2.fadeIn(600);
-            tuxing3.fadeIn(1200);
+            tuxing3.fadeIn(800);
             tuxing4.fadeIn(900);
             tuxing5.fadeIn(1000);
             tuxing1.animate({
-                top:'1900px',
-                opacity:'0.8',
+                top:'800px',
+                opacity:'0.6',
                 
             },15000)
             tuxing2.animate({
-                top:'1900px',
-                opacity:'0.9',
-                
-            },10000)
-            tuxing3.animate({
-                top:'1900px',
-                opacity:'0.7',
-                
-            },9000)
-            tuxing4.animate({
-                top:'1900px',
-                opacity:'0.6',
-                
-            },8000)
-            tuxing5.animate({
-                top:'1900px',
+                top:'820px',
                 opacity:'0.5',
                 
             },10000)
+            tuxing3.animate({
+                top:'830px',
+                opacity:'0.5',
+                
+            },9000)
+            tuxing4.animate({
+                top:'830px',
+                opacity:'0.3',
+                
+            },8000)
+            tuxing5.animate({
+                top:'800px',
+                opacity:'0.3',
+                
+            },10000)
+
+            tuxing1.fadeOut(900)
+tuxing2.fadeOut(500)
+tuxing3.fadeOut(600)
+tuxing4.fadeOut(700)
+tuxing5.fadeOut(800)
         });
-        
+
 
     </script>
 </body>

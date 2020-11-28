@@ -1,15 +1,17 @@
 *{
     padding: 0;
     margin: 0;
+
 }
 
 .title {
     position: fixed;
+    top:0;
     width: 1520px;
     height:100px;
     background-color: rgb(254,195,179);
-    position: relative;
 }
+
 .title p{
     position: absolute;
     color:CornflowerBlue;
@@ -55,6 +57,7 @@
     width: 1520px;
     height: 800px;
     position: relative;
+    top: 0;
     background-color:rgba(255,239,213,0.5);
 }
 
@@ -63,76 +66,113 @@
     width: 450px;
     height: 600px;
     background-color: #fff;
-    top: 20px;
+    top: 160px;
     right: 500px;
     border-radius: 10px;
     border: 2px solid #ccc;
-    background-image: url("../picture/bluebiankuang.png");
-    background-size: 500px  680px;
-    background-position: -20px -50px;
+    background-image: url("../picture/biankuang.jpg");
+    background-size: 450px  600px;
 }
 
-.box>p{
-    margin-top: 100px;
-    font-size: 22px;
-    text-align: center;
+.bigbox .headpic {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: solid 1px #ccc;
+    margin: 0 auto;
+    margin-top: 80px;
+    margin-bottom: 20px;
+}
+
+.bigbox .nicheng,.qianming,.username,.usertxt{
+    font-size: 18px;
+}
+.bigbox .nicheng,.username {
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.bigbox .qianming,.usertxt {
+    display: inline-block;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+.bigbox .nicheng,.qianming{
     color: #333;
+    margin-left: 80px;
+    margin-right: 30px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-.headpic {
-    display: inline-block;
-    width: 80px;
-    height: 80px;
-    border: 1px solid #666;
-    margin-left: 80px;
-    margin-top: 30px;
-}
-.touxiang {
-    margin-left: 20px;
-    position: relative;
-    top: 55px;
+.bigbox .username,.usertxt{
     color: #666;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
-
-.nicheng {
-    margin-left: 80px;
-    position: relative;
+.myform {
+    height: 20px;
+    font-size: 20px;
+    color: #666;
     display: inline-block;
-    margin-top: 30px;
-    margin-right: 20px;
+    margin-top: 8px;
+    margin-left: 8px;
 }
 
-.username {
-    box-sizing: border-box;
-    outline: none;
-    padding-left: 10px;
-    height: 30px;
-    border-radius: 5px;
-    border: 1px solid #666;
+.business {
+    width: 400px;
+    height: 180px;
+    background-color: rgb(230, 223, 223);
+    margin: 0 auto;
 }
 
-.sex {
-    margin-left: 80px;
-    position: relative;
-    display: inline-block;
-    margin-top: 30px;
-    margin-right: 20px;
-}
-
-.man{
-    margin-right: 10px;
-}
-
-.nan ,.nv{
-    margin-right: 5px;
-}
-
-.btn {
+.business .txt-p1,
+.txt-p2,
+.txt-p3,
+.txt-p4,
+.txt-p5{
+    margin-top: 20px;
     display: block;
-    width: 60px;
-    height: 30px;
-    margin: 80px auto;
+    width:80px;
+    height: 50px;
+    float: left;
+    background-color: rgb(243, 157, 168);
+    text-align: center;
+    line-height: 50px;
+    color: #666;
+    
 }
+.business .between1,
+.between2,
+.between3,
+.between4 {
+    display: block;
+    float: left;
+    color: #aaa;
+}
+
+.business::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+.myform {
+    position: relative;
+    top:10px
+}
+
+.shezhi {
+    width: 50px;
+    height: 30px;
+    font-size: 20px;
+    color: #666;
+    border: #666 2px solid;
+    border-radius: 5px;
+    background-color: rgb(235, 228, 228);
+    position: absolute;
+    bottom: 50px;
+    right: 220px;
+    text-align: center;
+}
+
 .tuxing1 {
     width: 60px;
     height: 60px;
