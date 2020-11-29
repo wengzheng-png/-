@@ -1,4 +1,3 @@
-
     let username = document.querySelector(".username");
     let headpic = document.querySelector(".headpic");
     let usertxt = document.querySelector(".usertxt");
@@ -27,6 +26,6 @@
     }
    else if(res.data.code == 4005){
         alert("请先登录!!!");
-        window.onload.href = ""//登陆页面
+        window.onload.href = "/public/login.html"//登陆页面
     }
     })
