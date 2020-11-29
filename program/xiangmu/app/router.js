@@ -34,7 +34,7 @@ module.exports = app => {
   // router.post('/load', controller.zmhome.load);
 
   //wushan
-  // router.post('/goods', controller.wsindex.goods);
+  router.post('/goods', controller.wsindex.goods);
 
 
   //yanrui

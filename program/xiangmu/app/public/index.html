@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>花之物语</title>
+    <!-- 引入axios -->
+    <script src='https://unpkg.com/axios/dist/axios.min.js'></script>
     <!-- 引入css样式 -->
     <link rel="stylesheet" href="./css/index.css">
 </head>
@@ -177,8 +179,12 @@
             <img src="./img/ws04.png" alt="图片加载失败">
         </div>
 
-        <!-- 数据库请求16个商品信息显示 -->
+        <!-- 数据库请求10个商品信息显示 -->
+        <div class="shujuku"></div>
 
+        <!-- 分隔 -->
+        <div class="fengge"></div>
+        
         <!-- 底部 -->
         <div class="last">
             <ul class="last-second-ul">
@@ -211,10 +217,72 @@
                 <p>Copyright&nbsp;&nbsp;©&nbsp;&nbsp;2004-2020 KuGou-Inc.All Rights Reserved</p>
             </div>
         </div>
-        
-        <!-- 引入js样式 -->
-        <script src="./js/index.js"></script>
+
     </div>
+
+    <!-- 引入js样式 -->
+    <script src="./js/index.js"></script>
+
+    <!-- 商品数据 -->
+    <script>
+        let shujuku = document.querySelector(".shujuku")
+        console.log(shujuku);
+         // 因为传输的数据有图片  图片也是文件 所以要用post网络请求
+         axios.post("/goods")
+            .then((res) => {
+                console.log(res);
+               for(let i = 0; i < 10; i++){
+                    // 得到后端传过来的数据库数据  创建节点  把他显示到页面上面
+                var goodsbox = document.createElement("div")
+                console.log(goodsbox);
+                goodsbox.className = "goodsbox";
+                shujuku.appendChild(goodsbox);
+
+                // 创建一个小盒子
+                var goods_nav = document.createElement("div")
+                goods_nav.className = "goods_nav";
+                goodsbox.appendChild(goods_nav);
+
+                // 创建一个a标签
+                var ids = document.createElement("a")
+                ids.className = "ids";
+                ids.href = "#"
+                goods_nav.appendChild(ids);
+
+                // 创建一个盒子来装商品图片
+                var img_nav = document.createElement("div")
+                img_nav.className = "img_nav";
+                ids.appendChild(img_nav);
+
+                // 创建图片
+                var goodsimg1 = document.createElement("img")
+                goodsimg1.className = "goodsimg1";
+                img_nav.appendChild(goodsimg1);
+                var imgsrc = res.data[i].f_img1
+                goodsimg1.src = imgsrc;
+
+                // 创建一个小盒子 装商品信息
+                var text_nav = document.createElement("div")
+                text_nav.className = "text_nav";
+                ids.appendChild(text_nav);
+
+                // 创建 h标签 来装鲜花的信息
+                var text_info = document.createElement("h4")
+                text_info.className = "text_info";
+                text_nav.appendChild(text_info);
+                text_info.innerHTML = res.data[i].f_info;
+                //价格
+                var text_price = document.createElement("h2")
+                text_price.className = "text_price";
+                text_nav.appendChild(text_price);
+                text_price.innerHTML = res.data[i].f_price;
+               }
+
+            })
+
+    </script>
+
+
 </body>
 
 </html>

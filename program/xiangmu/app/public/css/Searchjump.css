@@ -48,13 +48,6 @@ body {
     line-height: 40px;
 }
 
-.Homepage a {
-    display: inline-block;
-    width: 80px;
-    text-align: center;
-    background-color: #fff;
-}
-
 .nav-left li:hover a {
     color: #ff6700;
 }
@@ -120,7 +113,8 @@ body {
     width: 1200px;
     margin: 0 auto;
     height: 150px;
-    border-bottom: 2px solid #ff6700;
+    border-bottom: 5px solid #ff6700;
+    /* z-index: 100; */
 }
 
 .nav-search::after {
@@ -165,7 +159,7 @@ body {
     width: 500px;
     height: 50px;
     background-color: #ff6700;
-    border-radius: 25px;
+    /* border-radius: 25px; */
     overflow: hidden;
 }
 
@@ -207,158 +201,78 @@ body {
     background-color: #ff6700;
 }
 
-/* 轮播图部分 */
-.lunbo {
-    overflow: hidden;
-    margin: 50px auto;
+/* 右侧固定栏 */
+.right-box {
+    width: 40px;
+    height: 900px;
+    position: fixed;
+    right: 0px;
+    top: 0px;
+    background-color: #595656;
+}
+.right-box .spaninfo {
+    color: #fff;
+    text-align: center;
+    position: relative;
+    /* right: 0px; */
+    top: 290px;
+}
+.right-box .spancar {
+    color: #fff;
+    text-align: center;
+    position: relative;
+    /* right: 0px; */
+    top: 390px;
+}
+
+/* 选项卡 */
+.jumpul {
+    display: flex;
+    width: 1200px;
+    height: 40px;
+    line-height: 40px;
+    margin: 20px auto 40px;
+    background-color: #ccc;
+    border: 1px solid #aaa;
+    border-bottom-color: #ff6700;
     position: relative;
 }
 
-.lunbo .pic li {
-    display: none;
-}
-
-.lunbo .point {
-    position: absolute;
-    bottom: 15px;
-    left: 50%;
-    transform: translateX(-50%);
-
-}
-
-.lunbo .point li {
-    display: inline-block;
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background-color: #fff;
-    box-sizing: border-box;
-    padding: 0 3px;
-}
-
-.lunbo .aroow {
-    position: absolute;
-    width: 50px;
-    height: 80px;
-    font-size: 40px;
-    top: 50%;
-    transform: translateY(-50%);
-    text-align: center;
-    line-height: 80px;
-    color: silver;
-}
-
-.lunbo .aroow:hover {
-    background-color: rgba(0, 0, 0, 0.5);
-    color: #fff;
-}
-
-.lunbo .left-arrow {
-    left: 0px;
-}
-
-.lunbo .right-arrow {
-    right: 0px;
-
-}
-
-/*  <!-- 有一个所有分类  提示文字 --> */
-.allbox {
-    position: absolute;
-    left: 310px;
-    top: 225px;
-}
-
-.btnall {
-    width: 250px;
-    height: 50px;
-    margin-top: 20px;
-    font-size: 18px;
-    background-color: rgba(187, 103, 24, 0.5);
-    outline: none;
-    border: 1px solid #000;
+.jumpli {
+    list-style: none;
+    padding: 0 20px;
     color: #333;
+    font-size: 16px;
 }
 
-.myul {
+.jumpbox01 {
     display: block;
 }
 
-.myul li {
-    list-style: none;
-    width: 250px;
-    height: 100px;
-    background-color: rgba(80, 78, 82, 0.2);
-    /* margin-top: 5px; */
-    text-align: left;
-    color: #fff;
-    border-bottom: 1px solid #ccc;
-
-}
-
-.myul li p {
-    display: inline-block;
-    margin: 8px 0px;
-    font-weight: 700;
-    font-size: 20px;
-}
-
-.myul li span:hover {
-    color: #ff6700;
-}
-
-/* <!-- 鲜花 送人种类 --> */
-.meaning {
+.jumpbox {
     width: 1200px;
-    height: 376px;
-    margin: 0 auto;
-    display: flex;
+    height: 400px;
+    background-color: rgb(183, 135, 228);
+    position: absolute;
+    left: 0px;
 }
-
-.mean-right {
-    margin-left: 10px;
-}
-
-.right-text {
-    color: rgb(71, 48, 202);
-}
-
-/* 右侧固定 回到顶部 */
-.backtop {
-    width: 100px;
-    height: 280px;
-    /* background-color: #FF1493; */
-    position: fixed;
-    right: 10px;
-    top: 500px;
-}
-
-.backtop li {
-    /* list-style: none; */
-    padding: 10px;
-    /* margin-top: 5px; */
-    border: 1px solid #ff6700;
-    background-color: #fff;
-}
-
-.backtop li a {
-    font-size: 14px;
-    color: #000;
-}
-
-.backtop li:hover a {
-    color: #ff6700;
-}
-
-/* 特价广告区域 */
-.advertising {
+.jumpbox img {
     width: 1200px;
-    margin: 30px auto;
-    /* background-color: lightseagreen; */
+    height: 400px;
 }
-.advertising img {
-    margin-left: 6px;
+
+.jumpbox02 {
+    display: none;
 }
+
+/* 图片 */
+.adbrithd {
+    width: 1800px;
+    position: absolute;
+    top: 40px;
+    z-index: -100;
+}
+
 
 
 /* 数据库获取商品数据 css样式 */
@@ -387,70 +301,4 @@ body {
 .text_nav {
     width: 212px;
     text-align: center;
-}
-
-
-/* fengge */
-.fengge {
-    width: 1200px;
-    height: 650px;
-}
-
-/* 底部 */
-.last {
-    width: 100%;
-    height: 319px;
-    background-color: #000;
-    padding-bottom: 50px;
-    margin-top: 50px;
-}
-
-.last-second-ul {
-    width: 1519px;
-    height: 49px;
-    border-bottom: 1px solid #3d424a;
-    box-sizing: border-box;
-    padding: 15px 0;
-    font-size: 12px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-}
-
-.last-second-a {
-    color: #b1b3b9;
-    padding: 10px;
-}
-
-.last-second-a:hover {
-    color: #ff6700;
-}
-
-.last-second-li span {
-    color: #b1b3b9;
-}
-
-/* 最后 */
-.the-last-one {
-    width: 1000px;
-    height: 180px;
-    margin: 0 auto;
-    font-size: 13px;
-    color: #b1b3b9;
-    margin-top: 40px;
-}
-
-.the-last-one>p {
-    height: 30px;
-    line-height: 30px;
-    text-align: center;
-}
-
-.the-last-one>p a {
-    color: #b1b3b9;
-}
-
-.the-last-one>p a:hover {
-    color: #ff6700;
 }
