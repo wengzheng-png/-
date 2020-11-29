@@ -19,9 +19,5 @@ module.exports = app => {
   router.get('/users', controller.wzhome.users);//查询所有的用户信息
 
   router.post('/usid', controller.wzhome.usid);//删除用户的信息
-
-  router.post('/person', controller.personcenterrj.quzhi);//导入用户的信息
   
-  router.post('/changeperson', controller.changeperson.change);//更改用户信息
-
 };
