@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src='https://unpkg.com/axios/dist/axios.min.js'></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .main {
+            width: 100%;
+            height: 474px;
+            margin: 0 auto;
+            overflow: hidden;
+            background-image: url("https://img02.hua.com/pc/assets/img/login_bg.jpg");
+            background-size: cover;
+            background-position: 50% 0;
+            background-repeat: no-repeat;
+            position: relative;
+            top: 50px;
+        }
+
+        .register-contaniner {
+            background-color: #fff;
+            width: 360px;
+            height: 438px;
+            position: absolute;
+            right: 60px;
+            top: 18px;
+            border-radius: 8px;
+        }
+
+        .input-container {
+            margin: 0 8px 0 8px
+        }
+
+        input {
+            width: 262px;
+            height: 25px;
+            padding: 4px 6px;
+            margin: 5px 0 0 0;
+            font-size: 14px;
+            line-height: 20px;
+            color: #232628;
+        }
+
+        .register-btn {
+            cursor: pointer;
+            background: #FF734C;
+            color: #fff;
+            width: 290px;
+            height: 36px;
+            border-radius: 24px;
+            font-size: 16px;
+            border: 0;
+            position: relative;
+            left: 35px;
+        }
+
+        .tip {
+            font-size: 12px;
+            color: #aaa;
+            position: relative;
+            top: -10px;
+            left: 25px;
+            display: none;
+        }
+
+        .common {
+            box-sizing: border-box;
+            padding-left: 20px;
+            background-size: 14px 14px;
+            background-repeat: no-repeat;
+            position: relative;
+            top: -10px;
+            left: 10px;
+        }
+
+        .success {
+            color: #008000;
+            background-image: url(../public/upload/success.png);
+        }
+
+        .wrong {
+            color: #FF0000;
+            background-image: url(../public/upload/fail.png);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- username email pwd  sex img text-->
+    <div class="main">
+        <div class="register-contaniner">
+            <div class="input-container">姓名： <input type="text" name="username" id="username" value=""
+                    placeholder="请输入姓名"></div><br>
+            <div class="input-container">邮箱： <input type="email" name="email" id="email" value="" placeholder="请输入邮箱">
+            </div><br>
+            <span class="hint" style="display: none;">3~18个字符，由字母、数字、下划线组成</span>
+
+            <div class="input-container">密码： <input type="password" name="pwd" id="pwd" value="" placeholder="请输入密码">
+            </div><br>
+            <span class="password" style="display: none;"> 请输入密码(包含数字、字母3-20位)</span>
+            <div class="input-container">性别： <input type="text" name="sex" id="sex" value="" placeholder="请输入性别"></div>
+            <br>
+            <div class="input-container">头像： <input type="file" name="img" id="img" value="" placeholder="请上传头像"></div>
+            <br>
+            <div class="input-container">备注： <input type="text" name="text" id="text" value="" placeholder="备注"></div>
+            <br>
+            <button onclick="fn()" class="register-btn">注册</button>
+        </div>
+    </div>
+    <script>
+            // 前端表单验证
+            var emailInput = document.getElementById("email")
+            var pwdInput = document.getElementById("pwd")
+            var hintP = document.querySelector(".hint");
+            var password = document.querySelector(".password")
+            // 1.邮箱验证
+            // 获取焦点
+            emailInput.addEventListener("focus", function (event) {
+                hintP.style.display = "block";
+                hintP.innerHTML = "3~18个字符，有字母、数字、下划线组成";
+                hintP.className = "tip";
+            })
+
+            // 失去焦点
+            // blur和change  先执行change,再执行blur
+            emailInput.addEventListener("blur", function (event) {
+                hintP.style.display = "none";
+                console.log("blur");
+            });
+
+            // 2.密码验证
+            // 获取焦点
+            pwdInput.addEventListener("focus", function (event) {
+                password.style.display = "block";
+                password.innerHTML = "请输入密码(包含数字、字母3-20位)";
+                password.className = "tip";
+            })
+
+            // 失去焦点
+            // blur和change  先执行change,再执行blur
+            pwdInput.addEventListener("blur", function (event) {
+                // 失去焦点时,输入框中没有内容,那么不显示提示信息
+                if (event.target.value == "") {// event.target.value表示input中的数据
+                    password.style.display = "none";
+                }
+                console.log("blur");
+            });
+
+            // 输入改变
+            pwdInput.addEventListener("change", function () {
+                var regpwd =/^(?!([a-zA-Z]+|\d+)$)[a-zA-Z\d]{3,20}$/;
+                // event.target.value表示input中的数据.style.display = "block";
+                if (regpwd.test(event.target.value)){
+                    password.className = "common success";
+                } else {
+                    password.className = "common wrong";
+                }
+            })
+            function fn(){
+            // 获取数据
+            var username = document.getElementById("username").value
+            var email = document.getElementById("email").value
+            var pwd = document.getElementById("pwd").value
+            var sex = document.getElementById("sex").value
+            var img = document.getElementById("img").files[0]
+            var text = document.getElementById("text").value
+
+            // 发送数据
+            var url = "/register"
+            var data = new FormData()
+            data.append("username", username)
+            data.append("email", email)
+            data.append("pwd", pwd)
+            data.append("sex", sex)
+            data.append("img", img)
+            data.append("text", text)
+            axios.post(url, data)
+                .then((res) => {
+                    console.log(res);
+                    if (res.data.code == 2001) {
+                        window.location.href = "/public/login.html"
+                    } else if (res.data.code == 4001) {
+                        alert("邮箱已经注册")
+                        window.location.href = "/public/register.html"
+                    }
+                })
+            }
+
+    </script>
+</body>
+
+</html>
