@@ -7,9 +7,10 @@
 .title {
     position: fixed;
     top:0;
-    width: 1520px;
+    width: 1920px;
     height:100px;
     background-color: rgb(254,195,179);
+    z-index: 100;
 }
 
 .title p{
@@ -27,7 +28,7 @@
     width: 200px;
     outline: none;
     position: absolute;
-    right: 550px;
+    right: 750px;
     top: 30px;
     border: orangered 1px solid;
     border-radius: 5px;
@@ -41,7 +42,7 @@
     width: 50px;
     position: absolute;
     top: 35px;
-    right: 490px;
+    right: 690px;
     background-color: orangered;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -54,8 +55,8 @@
 }
 
 .bigbox {
-    width: 1520px;
-    height: 800px;
+    width: 1920px;
+    height: 850px;
     position: relative;
     top: 0;
     background-color:rgba(255,239,213,0.5);
@@ -66,8 +67,8 @@
     width: 450px;
     height: 600px;
     background-color: #fff;
-    top: 160px;
-    right: 500px;
+    top: 130px;
+    right: 800px;
     border-radius: 10px;
     border: 2px solid #ccc;
     background-image: url("../picture/biankuang.jpg");
@@ -82,6 +83,7 @@
     margin: 0 auto;
     margin-top: 80px;
     margin-bottom: 20px;
+    background-size: 100px 100px;
 }
 
 .bigbox .nicheng,.qianming,.username,.usertxt{

@@ -19,7 +19,7 @@ module.exports = appInfo => {
   port:'3306',
   user:'root',
   password:'root',
-  database:'wzhost'
+  database:'person'
   }
   };
 
@@ -27,6 +27,11 @@ module.exports = appInfo => {
   mode: 'file',
    };
 
+   config.security={
+    csrf:{
+      enable:false
+    }
+  }
 
    exports.security = {
     csrf: {
