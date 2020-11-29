@@ -29,7 +29,7 @@ module.exports = app => {
   router.post('changeperson', controller.changeperson.change);//更改用户信息
 
   //zhoameng
-  // router.post('opping', controller.zmhome.shopping);
+  // router.post('/shopping', controller.zmhome.shopping);
 
   // router.post('/load', controller.zmhome.load);
 
