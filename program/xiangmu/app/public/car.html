@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>购物车</title>
+    <link rel="stylesheet" href="css/car.css">
+    <script src='https://s1.pstatp.com/cdn/expire-1-M/axios/0.19.2/axios.js'></script>
+
+</head>
+
+<body>
+
+    <script >
+        axios.post("/load")
+            .then((res) => {
+                var arr = [].slice.call(res.data);
+                console.log(arr[0]);
+                var div = document.createElement("div")
+                document.body.appendChild(div)
+                div.innerHTML = `
+                
+                    <!-- 导航栏 -->
+                <div class="program">
+            <!-- 顶部导航栏 -->
+            <div class="nav-container">
+                <div class="w-center">
+                    <!-- 导航栏的左边 -->
+                    <ul class="nav-left">
+                        <li><a href="#">嘿！欢迎来到花之物语</a><span>|</span></li>
+                        <li class="Homepage"><a href="#">首页</a><span>|</span></li>
+                        <li><a href="#">Flower</a></li>
+                    </ul>
+                    <!-- 导航栏的右边 -->
+                    <ul class="nav-right">
+                        <li><a href="">你好，请登录</a><span>|</span></li>
+                        <li><a href="">免费注册</a><span>|</span></li>
+                        <li><a href="">消息通知</a></li>
+                        <li class="cart-con">
+                            <a href="">购物车</a>
+                            <div class="cart-box">
+                                还没有商品哦！请去添加商品
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        <!-- 搜索 -->
+        <div class="nav-search">
+            <div class="sc-left">
+                <div class="logo"><img src="./img/logo.gif" alt=""></div>
+                <div class="logo-text">------花心思，只为你------</div>
+            </div>
+
+            <div class="sc-right">
+                <div class="searchbox">
+                    <input type="text" name="search" class="search" placeholder="请输入有关鲜花关键字">
+                    <button class="scbtn">搜索</button>
+                </div>
+                <div class="sc-text">
+                    <a href="#"><span>玫瑰</span></a>
+                    <span>|</span>
+                    <a href="#"><span>百合</span></a>
+                    <span>|</span>
+                    <a href="#"><span>康乃馨</span></a>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- 购物车 -->
+        <div class="center car_box">
+            <div class="box">
+                <div class="left">
+                    <img src="${arr[0].f_img1}" alt="" class="img1">
+                    <div class="small_img">
+                        <img src="${arr[0].f_img1}" alt="" class="img2" style="border-color: #FF6E47;" >
+                        <img src="${arr[0].f_img2}" alt="" class="img3" >
+                        <img src="${arr[0].f_img3}" alt="" class="img4" >
+                        <img src="${arr[0].f_img4}" alt="" class="img5" >
+                    </div>
+                </div>
+
+
+
+
+
+
+                <div class="right">
+
+                    <h3>${arr[0].f_info}</h3>
+                    <div class="r_middile">
+                        <div class="cid_1">
+                            售价         <sapn class="price">${arr[0].f_price}</sapn >
+                        </div>
+                        <div class="cid_2"><P calss="div_p">花语</P>        ${arr[0].f_language}</div>
+                        <div class="cid_3"><P calss="div_p">材料</P>        ${arr[0].f_materials}</div>
+                        <div class="cid_4"><P calss="div_p">包装</P>        ${arr[0].f_box}</div>
+                    </div>
+
+                    <div class="r_bottom">
+                        <div class="car_ad1">配送说明        全国</div>
+                        <div class="car_ad2">配送至      省/市</div>
+                        <div class="car_3">
+                            <div class="car_le">加入购物车</div>
+                            <div class="car_ri">立即购买</div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <!-- js部分 -->
+
+
+
+
+
+    `
+var img = document.querySelector(".small_img");
+            var img1 = document.querySelector(".img1");
+            //console.log(img);
+            var imgs = img.children;
+            //console.log(imgs);
+            img.addEventListener("mouseover", function (e) {
+                //console.log(1111);
+                for (let i = 0; i < 4; i++) {
+                    imgs[i].style.borderColor = "#fff";
+                }
+                e.target.style.borderColor = "#FF6E47";
+                if (e.target.src) {
+                    img1.src = e.target.src
+                }
+            })
+            })
+      
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>商品</title>
+    <link rel="stylesheet" href="./css/goods.css">
+    <script src='https://s1.pstatp.com/cdn/expire-1-M/axios/0.19.2/axios.js'></script>
+</head>
+
+<body>
+    <script>
+        axios.post("/goods")
+            .then((res) => {
+               // var arr = [].slice.call(res.data);
+                //console.log(arr[0]);
+                //创建商品橱窗
+                var div = document.createElement("div")
+                document.body.appendChild(div)
+                div.className = "goods_box"
+
+                //开始创建小商品
+                for (let i = 0; i < 20; i++) {
+                    let div1 = document.createElement("div");
+                    div1.className = "goods_nav";
+                    div.appendChild(div1);
+                    div1.innerHTML = `
+                    <a href="#" class="ids">
+                    <div class="img_nav">
+                    <img src="${res.data[i].f_img1}" alt="" class="img1">
+                    </div>
+
+                    <div>
+                    <p>${res.data[i].f_info}</p>
+                    <p>${res.data[i].f_price}</p>
+                    <p>已售 1.4 万件</p>
+                     </div>
+                     </a>
+                    
+                    `
+                    var ids = document.querySelectorAll(".ids")
+                    //获取所有商品
+                    for (let i = 0; i < ids.length; i++) {
+                        //1.给每个商品设置点击事件就做网络请求  
+                        ids[i].addEventListener("click", (e) => {
+                            //console.log(i);
+                            var url = "/shopping";
+                            //2.获取当前商品 详情名字保存在 f_info 中  
+                            var f_info = ids[i].children[1].children[0].innerHTML;
+                            console.log(f_info);
+                            //3.用于后端连接数据库时当做查询字段
+                            var data = new FormData()
+                            console.log(data);
+                            data.append("f_info", f_info)
+                            // console.log(data);
+                            //post传字段
+                            axios.post(url, data)
+                                .then((res) => {
+                                    //请求网络成功后跳转页面到购物车
+                                    window.location.href = "./car.html"
+                                })
+                                .catch((err) => {
+                                    console.log(err);
+                                })
+                        })
+
+                    }
+
+
+                }
+
+            })
+
+    </script>
+</body>
+
+</html>

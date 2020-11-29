@@ -29,9 +29,9 @@ module.exports = app => {
   router.post('changeperson', controller.changeperson.change);//更改用户信息
 
   //zhoameng
-  // router.post('opping', controller.zmhome.shopping);
+   router.post('/shopping', controller.zmhome.shopping);//跳转到购物车
 
-  // router.post('/load', controller.zmhome.load);
+   router.post('/load', controller.zmhome.load);
 
   //wushan
   router.post('/goods', controller.wsindex.goods);
