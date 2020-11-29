@@ -184,7 +184,7 @@
 
         <!-- 分隔 -->
         <div class="fengge"></div>
-        
+
         <!-- 底部 -->
         <div class="last">
             <ul class="last-second-ul">
@@ -222,63 +222,96 @@
 
     <!-- 引入js样式 -->
     <script src="./js/index.js"></script>
+    <script src="./js/goods.js"></script>
 
     <!-- 商品数据 -->
     <script>
         let shujuku = document.querySelector(".shujuku")
-        console.log(shujuku);
-         // 因为传输的数据有图片  图片也是文件 所以要用post网络请求
-         axios.post("/goods")
+        //console.log(shujuku);
+        // 因为传输的数据有图片  图片也是文件 所以要用post网络请求
+        axios.post("/goods")
             .then((res) => {
-                console.log(res);
-               for(let i = 0; i < 10; i++){
+                //console.log(res);
+                for (let i = 0; i < 10; i++) {
                     // 得到后端传过来的数据库数据  创建节点  把他显示到页面上面
-                var goodsbox = document.createElement("div")
-                console.log(goodsbox);
-                goodsbox.className = "goodsbox";
-                shujuku.appendChild(goodsbox);
+                    var goodsbox = document.createElement("div")
+                   // console.log(goodsbox);
+                    goodsbox.className = "goodsbox";
+                    shujuku.appendChild(goodsbox);
 
-                // 创建一个小盒子
-                var goods_nav = document.createElement("div")
-                goods_nav.className = "goods_nav";
-                goodsbox.appendChild(goods_nav);
+                    // 创建一个小盒子
+                    var goods_nav = document.createElement("div")
+                    goods_nav.className = "goods_nav";
+                    goodsbox.appendChild(goods_nav);
 
-                // 创建一个a标签
-                var ids = document.createElement("a")
-                ids.className = "ids";
-                ids.href = "#"
-                goods_nav.appendChild(ids);
+                    // 创建一个a标签
+                    var ids = document.createElement("div")
+                    ids.className = "ids";
+                    // ids.href = "#"
+                    goods_nav.appendChild(ids);
 
-                // 创建一个盒子来装商品图片
-                var img_nav = document.createElement("div")
-                img_nav.className = "img_nav";
-                ids.appendChild(img_nav);
+                    // 创建一个盒子来装商品图片
+                    var img_nav = document.createElement("div")
+                    img_nav.className = "img_nav";
+                    ids.appendChild(img_nav);
 
-                // 创建图片
-                var goodsimg1 = document.createElement("img")
-                goodsimg1.className = "goodsimg1";
-                img_nav.appendChild(goodsimg1);
-                var imgsrc = res.data[i].f_img1
-                goodsimg1.src = imgsrc;
+                    // 创建图片
+                    var goodsimg1 = document.createElement("img")
+                    goodsimg1.className = "goodsimg1";
+                    img_nav.appendChild(goodsimg1);
+                    var imgsrc = res.data[i].f_img1
+                    goodsimg1.src = imgsrc;
 
-                // 创建一个小盒子 装商品信息
-                var text_nav = document.createElement("div")
-                text_nav.className = "text_nav";
-                ids.appendChild(text_nav);
+                    // 创建一个小盒子 装商品信息
+                    var text_nav = document.createElement("div")
+                    text_nav.className = "text_nav";
+                    ids.appendChild(text_nav);
 
-                // 创建 h标签 来装鲜花的信息
-                var text_info = document.createElement("h4")
-                text_info.className = "text_info";
-                text_nav.appendChild(text_info);
-                text_info.innerHTML = res.data[i].f_info;
-                //价格
-                var text_price = document.createElement("h2")
-                text_price.className = "text_price";
-                text_nav.appendChild(text_price);
-                text_price.innerHTML = res.data[i].f_price;
-               }
-
+                    // 创建 h标签 来装鲜花的信息
+                    var text_info = document.createElement("h4")
+                    text_info.className = "text_info";
+                    text_nav.appendChild(text_info);
+                    text_info.innerHTML = res.data[i].f_info;
+                    //价格
+                    var text_price = document.createElement("h2")
+                    text_price.className = "text_price";
+                    text_nav.appendChild(text_price);
+                    text_price.innerHTML = res.data[i].f_price;
+                }
+                
+                var ids = document.querySelectorAll(".ids")
+                console.log(ids);
+                //获取所有商品
+                for (let i = 0; i < ids.length; i++) {
+                    //1.给每个商品设置点击事件就做网络请求  
+                    ids[i].addEventListener("click", (e) => {
+                        console.log(i);
+                        var url = "/shopping";
+                        //2.获取当前商品 详情名字保存在 f_info 中  
+                        var f_info = ids[i].children[1].children[0].innerHTML;
+                        console.log(f_info);
+                        //3.用于后端连接数据库时当做查询字段
+                        var data = new FormData()
+                        console.log(data);
+                        data.append("f_info", f_info)
+                        // console.log(data);
+                        //post传字段
+                        axios.post(url, data)
+                            .then((res) => {
+                                //请求网络成功后跳转页面到购物车
+                                window.location.href = "./car.html"
+                            })
+                            .catch((err) => {
+                                console.log(err);
+                            })
+                    })
+        
+                }
             })
+
+
+
+
 
     </script>
 

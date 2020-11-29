@@ -29,9 +29,9 @@ module.exports = app => {
   router.post('changeperson', controller.changeperson.change);//更改用户信息
 
   //zhoameng
-  // router.post('/shopping', controller.zmhome.shopping);
+  router.post('/shopping', controller.zmhome.shopping);
 
-  // router.post('/load', controller.zmhome.load);
+   router.post('/load', controller.zmhome.load);
 
   //wushan
   router.post('/goods', controller.wsindex.goods);
@@ -43,8 +43,5 @@ module.exports = app => {
   router.get('/getVerif', controller.yrhome.getVerif);//获取验证码接口
 
   router.post('/login', controller.yrhome.login);//登录接口
-
-  
-
 
 };
