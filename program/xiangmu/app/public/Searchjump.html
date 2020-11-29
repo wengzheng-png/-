@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>花之物语</title>
+    <script src='https://unpkg.com/axios/dist/axios.min.js'></script>
+    <!-- 引入css样式 -->
+    <link rel="stylesheet" href="./css/Searchjump.css">
+</head>
+
+<body>
+    <div class="program">
+        <!-- 顶部导航栏 -->
+        <div class="nav-container">
+            <div class="w-center">
+                <!-- 导航栏的左边 -->
+                <ul class="nav-left">
+                    <li><a href="#">嘿！欢迎来到花之物语</a><span>|</span></li>
+                    <li><a href="#">返回首页</a><span>|</span></li>
+                    <li><a href="#">Flower</a></li>
+                </ul>
+                <!-- 导航栏的右边 -->
+                <ul class="nav-right">
+                    <li><a href="">你好，请登录</a><span>|</span></li>
+                    <li><a href="">免费注册</a><span>|</span></li>
+                    <li><a href="">消息通知</a><span>|</span></li>
+                    <li><a href="">我的花礼</a></li>
+                    <li class="cart-con">
+                        <a href="">购物车</a>
+                        <div class="cart-box">
+                            还没有商品哦！请去添加商品
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+        <!-- 搜索 -->
+        <div class="nav-search">
+            <div class="sc-left">
+                <div class="logo"><img src="./img/logo.gif" alt=""></div>
+                <div class="logo-text">------花心思，只为你------</div>
+            </div>
+
+            <div class="sc-right">
+                <div class="searchbox">
+                    <input type="text" name="search" class="search" placeholder="请输入有关鲜花关键字">
+                    <button class="scbtn">搜索</button>
+                </div>
+                <div class="sc-text">
+                    <a href="#"><span>玫瑰</span></a>
+                    <span>|</span>
+                    <a href="#"><span>百合</span></a>
+                    <span>|</span>
+                    <a href="#"><span>康乃馨</span></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 右侧固定栏 -->
+        <div class="right-box">
+            <div class="spaninfo">
+                <div>个</div>
+                <div>人</div>
+                <div>中</div>
+                <div>心</div>
+            </div>
+            <div class="spancar">
+                <div>购</div>
+                <div>物</div>
+                <div>车</div>
+            </div>
+        </div>
+
+        <!-- 选项卡 -->
+        <ul class="jumpul">
+            <li class="jumpli" style="color: #fff; background-color: #ff6700;">
+                鲜花
+                <div class="jumpbox jumpbox01"><img src="https://img02.hua.com/banner/huacai_rose_160722.jpg" alt=""></div>
+            </li>
+            <li class="jumpli">
+                永生花
+                <div class="jumpbox jumpbox02"><img src="https://img02.hua.com/banner/huacai_baihe_190906.jpg" alt=""></div>
+            </li>
+            <li class="jumpli">
+                生日鲜花
+                <div class="jumpbox jumpbox02"><img src="https://img02.hua.com/banner/huacai_kangnaixin_180731.jpg" alt=""></div>
+            </li>
+            <li class="jumpli">
+                设计师臻选鲜花
+                <div class="jumpbox jumpbox02"><img src="https://img02.hua.com/banner/huacai_red_180727.jpg" alt=""></div>
+            </li>
+            <li class="jumpli">
+                鲜花礼物
+                <div class="jumpbox jumpbox02"><img src="https://img02.hua.com/pc/pimg/yuyingxiang_190228.jpg" alt=""></div>
+            </li>
+        </ul>
+        <div style="height: 400px;"></div>
+
+        <!-- 来一张广告图片 -->
+        <img src="./img/adbrithd.png" alt="" class="adbrithd">
+        
+        <!-- 数据库商品数据 -->
+        <div class="shujuku"></div>
+
+    </div>
+    <script>
+
+        // 选项卡  
+        let jumpli = document.querySelectorAll(".jumpli");
+		let jumpdiv = document.querySelectorAll(".jumpbox");
+		for (let i = 0; i < jumpli.length; i++) {
+			jumpli[i].onclick = function () {
+				// 1.先清除样式
+				for (let j = 0; j < jumpli.length; j++) {
+					jumpli[j].style.color = "#333";
+					jumpli[j].style.backgroundColor = "transparent";
+					jumpdiv[j].style.display = "none";
+				}
+				// 2.再设置被点击项的样式
+				jumpli[i].style.cssText = "color: #fff; background-color: #ff6700;"
+				jumpdiv[i].style.display = "block";
+			}
+        }
+        
+
+        // <!-- 商品数据 -->
+  
+        let shujuku = document.querySelector(".shujuku")
+        console.log(shujuku);
+         // 因为传输的数据有图片  图片也是文件 所以要用post网络请求
+         axios.post("/goods")
+            .then((res) => {
+                // console.log(res);
+               for(let i = 0; i < 20; i++){
+                    // 得到后端传过来的数据库数据  创建节点  把他显示到页面上面
+                var goodsbox = document.createElement("div")
+                // console.log(goodsbox);
+                goodsbox.className = "goodsbox";
+                shujuku.appendChild(goodsbox);
+
+                // 创建一个小盒子
+                var goods_nav = document.createElement("div")
+                goods_nav.className = "goods_nav";
+                goodsbox.appendChild(goods_nav);
+
+                // 创建一个a标签
+                var ids = document.createElement("a")
+                ids.className = "ids";
+                ids.href = "#"
+                goods_nav.appendChild(ids);
+
+                // 创建一个盒子来装商品图片
+                var img_nav = document.createElement("div")
+                img_nav.className = "img_nav";
+                ids.appendChild(img_nav);
+
+                // 创建图片
+                var goodsimg1 = document.createElement("img")
+                goodsimg1.className = "goodsimg1";
+                img_nav.appendChild(goodsimg1);
+                var imgsrc = res.data[i].f_img1
+                goodsimg1.src = imgsrc;
+
+                // 创建一个小盒子 装商品信息
+                var text_nav = document.createElement("div")
+                text_nav.className = "text_nav";
+                ids.appendChild(text_nav);
+
+                // 创建 h标签 来装鲜花的信息
+                var text_info = document.createElement("h4")
+                text_info.className = "text_info";
+                text_nav.appendChild(text_info);
+                text_info.innerHTML = res.data[i].f_info;
+                //价格
+                var text_price = document.createElement("h2")
+                text_price.className = "text_price";
+                text_nav.appendChild(text_price);
+                text_price.innerHTML = res.data[i].f_price;
+               }
+
+            })
+
+    </script>
+</body>
+
+</html>

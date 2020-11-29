@@ -19,7 +19,7 @@ module.exports = appInfo => {
   port:'3306',
   user:'root',
   password:'root',
-  database:'person'
+  database:'wzhost'
   }
   };
 

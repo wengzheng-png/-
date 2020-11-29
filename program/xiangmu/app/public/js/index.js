@@ -1,4 +1,23 @@
-
+// 搜索框 跳转页面  按钮点击事件 和 键盘回车事件
+let search = document.querySelector(".search")
+let scbtn = document.querySelector(".scbtn")
+let scarrs = ["玫瑰","百合","康乃馨","白玫瑰","黄玫瑰","鲜花","绿植","白百合","花朵","鲜花网","花之物语","菊花"]
+let searchthing = function(){
+    console.log("跳转新的页面");
+    window.location.href="Searchjump.html"
+}
+scbtn.onclick = function(){
+    scarrs.forEach((el)=>{
+        if(el==search.value){
+        searchthing();
+        }
+    })
+}
+document.onkeydown = function (e) {
+    if (e.keyCode === 13) {
+        searchthing();
+    }
+}
 // 轮播图部分
 let index = 0;  //全局变量
 let pic = document.querySelectorAll(".pic li");
