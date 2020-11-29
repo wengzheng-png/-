@@ -8,6 +8,7 @@
     <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
     <script src='https://unpkg.com/axios/dist/axios.min.js'></script>
     <script src="./personjsrj/changepersonrj.js"></script>
+    <script src="./personjsrj/personrj.js"></script>
 </head>
 <body>
     
@@ -35,6 +36,20 @@
         </div>
     </div>
 
+   <!--  <script>
+    let username = document.querySelector(".username");
+    let headpic = document.querySelector(".headpic");
+    let usertxt = document.querySelector(".usertxt");
+        let url = "/person";
+        axios.post(url)
+        .then((res)=>{
+            usertxt.innerHTML = res.data.data[0].usertxt;
+        headpic.innerHTML = res.data.data[0].headpic;
+        username.innerHTML = res.data.data[0].username;
+        birthday.innerHTML = res.data.data[0].username
+
+        })
+    </script> -->
     <script>
         
         $(document).ready(function(){

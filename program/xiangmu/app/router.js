@@ -44,7 +44,4 @@ module.exports = app => {
 
   router.post('/login', controller.yrhome.login);//登录接口
 
-  
-
-
 };

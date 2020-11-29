@@ -9,7 +9,7 @@ class HomeController extends Controller {
     //数据库查询结果是一个对象
 
     if(sr[0]){
-      ctx.body = {code:2006,info:"修改成功"};
+      ctx.body = {code:2006,info:"修改成功",data:sr};
     }
     console.log(sr);
     ctx.body = 'shuju';
