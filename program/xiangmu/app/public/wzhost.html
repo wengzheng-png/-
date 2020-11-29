@@ -12,46 +12,52 @@
 
 <body>
     <div class="box">
-        <div class="header">欢迎来到,管理员操作界面</div>
+        <div class="header">鲜花网数据管理系统</div>
 
         <div class="main">
             <!-- 这里是商品的操作的模块 -->
             <div class="left">
+                <div class="head">
                 <button class="btn">点击查询你所有的商品信息</button>
                 <div class="shopsinfo"></div>
+                </div>
 
+                <div class="mid">
                 <button class="btn2">点击添加你的商品的信息</button><br>
-                <span>flowerid</span><input class="flowerid" type="text" value="11"><br>
-                <span>img1</span><input class="img1" type="text" value="11"><br>
-                <span>img2</span><input class="img2" type="text" value="11"><br>
-                <span>img3</span><input class="img3" type="text" value="11"><br>
-                <span>img4</span><input class="img4" type="text" value="11"><br>
-                <span>price</span><input class="price" type="text" value="11"><br>
-                <span>huayu</span><input class="huayu" type="text" value="11"><br>
-                <span>cailiao</span><input class="cailiao" type="text" value="11"><br>
-                <span>baozhaung</span><input class="baozhaung" type="text" value="11"><br>
-                <span>talk</span><input class="talk" type="text" value="11"><br>
-                <span>sent</span><input class="sent" type="text" value="11"><br>
+                <span>f_id</span><input class="flowerid" type="text" value="11"><br>
+                <span>f_img1</span><input class="img1" type="text" value="11"><br>
+                <span>f_img2</span><input class="img2" type="text" value="11"><br>
+                <span>f_img3</span><input class="img3" type="text" value="11"><br>
+                <span>f_img4</span><input class="img4" type="text" value="11"><br>
+                <span>f_info</span><input class="price" type="text" value="11"><br>
+                <span>f_price</span><input class="huayu" type="text" value="11"><br>
+                <span>f_language</span><input class="cailiao" type="text" value="11"><br>
+                <span>f_materials</span><input class="baozhaung" type="text" value="11"><br>
+                <span>f_box</span><input class="talk" type="text" value="11"><br>
+                <!-- <span>sent</span><input class="sent" type="text" value="11"><br> -->
+               </div>
 
-
-                
+                <div class="tail">
                 <input type="text" class="rmove" placeholder="请输入你想删除的商品id在第一个biao第一列" ><button class="rebtn">删除</button>
-
+                </div>
 
             </div>
             <!--这里是查询用户的信息的模块  -->
             <div class="right">
+                <div class="right-in">
                    <button class="userbtn">点击查询你所有的用户的信息</button>
                    <div class="userdiv">
                     <table border="2px solid balck" align="center" width="800px" cellpadding="20px" height="20px"style="text-align: center;">
                             <tr>
-                                <td>uid</td>
-                                <td>tel</td>
+                                <td>id</td>
+                                <td>email</td>
                                 <td>pwd</td>
+                                <td>sex</td>
                                 <td>操作按钮</td>
                             </tr>
                        </table>
                    </div>
+                </div>
             </div>
         </div>
 
@@ -68,27 +74,27 @@
                     var div = document.createElement("div")
 
                     var span = document.createElement("span")
-                    span.innerHTML = res.data[i].flowerid
+                    span.innerHTML = res.data[i].f_id
                     var span1 = document.createElement("span")
-                    span1.innerHTML = res.data[i].img1
+                    span1.innerHTML = res.data[i].f_img1
                     var span2 = document.createElement("span")
-                    span2.innerHTML = res.data[i].img2
+                    span2.innerHTML = res.data[i].f_img2
                     var span3 = document.createElement("span")
-                    span3.innerHTML = res.data[i].img3
+                    span3.innerHTML = res.data[i].f_img3
                     var span4 = document.createElement("span")
-                    span4.innerHTML = res.data[i].img4
+                    span4.innerHTML = res.data[i].f_img4
                     var span5 = document.createElement("span")
-                    span5.innerHTML = res.data[i].price
+                    span5.innerHTML = res.data[i].f_info
                     var span6 = document.createElement("span")
-                    span6.innerHTML = res.data[i].huayu
+                    span6.innerHTML = res.data[i].f_price
                     var span7 = document.createElement("span")
-                    span7.innerHTML = res.data[i].cailiao
+                    span7.innerHTML = res.data[i].f_language
                     var span8 = document.createElement("span")
-                    span8.innerHTML = res.data[i].baozhang
+                    span8.innerHTML = res.data[i].f_materials
                     var span9 = document.createElement("span")
-                    span9.innerHTML = res.data[i].talk
-                    var span10 = document.createElement("span")
-                    span10.innerHTML = res.data[i].sent
+                    span9.innerHTML = res.data[i].f_box
+                    // var span10 = document.createElement("span")
+                    // span10.innerHTML = res.data[i].sent
 
                     div.appendChild(span)
                     div.appendChild(span1)
@@ -100,7 +106,7 @@
                     div.appendChild(span7)
                     div.appendChild(span8)
                     div.appendChild(span9)
-                    div.appendChild(span10)
+                    // div.appendChild(span10)
                     shopsinfo.appendChild(div)
                 }
             })
@@ -120,7 +126,7 @@
         var cailiao = document.querySelector(".cailiao")
         var baozhaung = document.querySelector(".baozhaung")
         var talk = document.querySelector(".talk")
-        var sent = document.querySelector(".sent")
+        // var sent = document.querySelector(".sent")
 
 
         var btn2 = document.querySelector(".btn2")
@@ -137,7 +143,7 @@
             shopdate.append("cailiao", cailiao.value)
             shopdate.append("baozhaung", baozhaung.value)
             shopdate.append("talk", talk.value)
-            shopdate.append("sent", sent.value)
+            // shopdate.append("sent", sent.value)
 
 
             // console.log(flowerid,img1,img2,img3,img4)//img1.value,img2.value,img3.value,img4.value);
@@ -171,27 +177,33 @@
             userbtn.onclick = function(){
                 // console.log(1111);
                 table.innerHTML = ` <tr>
-                                <td>uid</td>
-                                <td>tel</td>
+                                <td>id</td>
+                                <td>email</td>
                                 <td>pwd</td>
+                                <td>sex</td>
                                 <td>操作按钮</td>
                             </tr>`
                 axios("/users").then((res)=>{
                     //  console.log(res);
                     for(let i =0;i<res.data.length;i++){
+                         
                          var td1 = document.createElement("td")
                          var td2 = document.createElement("td")
                          var td3 = document.createElement("td")
+                         var td0 = document.createElement("td")
                          var td4 = document.createElement("td")
-                             td1.innerHTML = res.data[i].uid
-                             td2.innerHTML = res.data[i].tel
+                             td1.innerHTML = res.data[i].id
+                             td2.innerHTML = res.data[i].email
                              td3.innerHTML = res.data[i].pwd
+                             td0.innerHTML = res.data[i].sex
                              td4.innerHTML = `<button class="one">修改</button> <button class="two">删除</button>`
                         var tr = document.createElement("tr")
                             tr.appendChild(td1)
                             tr.appendChild(td2)
                             tr.appendChild(td3)
+                            tr.appendChild(td0)
                             tr.appendChild(td4)
+                           
                             table.appendChild(tr)
                     }
                 })
@@ -215,7 +227,7 @@
                     let father = e.target.parentElement.parentElement
                     let son = father.children;
                     Array.from(son).forEach((el, index) => {
-                        if (index != 3) {
+                        if (index != 4) {
                             var text = el.innerHTML;
                             // console.log(text);
                             el.innerHTML = `<input type="text"  class="ttt" value ="${text}" >`
@@ -230,14 +242,27 @@
                     let son = father.children;
                     // console.log(input2);
 
-                    Array.from(son).forEach((el, index) => {
-                            
-                        if (index != 3) {
-                            var val = input2[index].value;
-                            el.innerHTML = `${val}`
 
-                        }
+                    var  update = new FormData()
+                     var  sondate= Array.from(son)
+                     sondate.forEach((el, index) => {
+                        //发送所有input里面的内容
+                        if (index != 4) {
+                            var val = input2[index].value;
+                            el.innerHTML = `${val}`                            
+                        }  
+
+
+
+
+                        //还有问题
+                        update.append(index,val) 
                     });
+                   
+
+                    axios.post("/updeteuser",update).then((res)=>{
+                            console.log(res);
+                            });
                     e.target.innerHTML = "修改"
                 }
 

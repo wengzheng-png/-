@@ -61,6 +61,15 @@ class HomeController extends Controller {
     var date =await this.ctx.service.wzservice.deluser(this.ctx.request.body)
     this.ctx.body={code:200}
   }
+
+
+  //修改用户的信息
+  async updeteuser() {  
+    const { ctx } = this; 
+    console.log(this.ctx.request.body);
+    // var date =await this.ctx.service.wzservice.updeteuser(this.ctx.request.body)
+    this.ctx.body={code:200}
+  }
 }
 
 module.exports = HomeController;

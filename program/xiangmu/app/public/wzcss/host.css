@@ -4,7 +4,7 @@
 }
 
 body {
-    background-color: #F3F5F7;
+    /* background-color: #F3F5F7; */
   
 }
 
@@ -13,65 +13,103 @@ li {
 }
 .box {
     width: 1912px;
-    height:900px;
+    height:910px;
     /* background-color: rosybrown; */
     /* position: relative; */
     /* top: 50%; */
     /* left: 50%; */
     /* transform: translateX(-50%) ; */
-    border: 4px solid #D4237A;
+    border: 4px solid black;
+    box-sizing: border-box;
 }
 .box .header {
     width: 100%;
-    height: 25px;
-    font-size: 25px;
-    line-height: 25px;
-    background-color: seagreen;
-    text-align: center;
+    height: 60px;
+    font-size: 50px;
+    line-height: 50px;
+    background-color: black;
+    color: white;
+    /* text-align: center; */
 }
 .main {
     display: flex;
     width: 100%;
     height: 100%;
-    background-color:wheat;
+    /* background-color:black; */
     justify-content: space-between;
 }
 .main .left {
     width: 48%;
-    height: 100%;
+    height: 90%;
     /* background-color: springgreen; */
+    background-color: white;
+}
+
+.main .left .head {
+    border: 2px solid black;
+    margin-top: 2px;
+}
+
+.main .left  .tail {
+    margin-top: 1px;
+}
+
+.main .left  .tail button {
+    width: 60px;
+    margin-left: 20px;
 }
 .main .right {
     width: 48%;
-    height: 100%;
+    height: 90%;
   
+}
+.main .right .right-in {
+    width: 900px;
+    height: 100%;
+    border: 2px solid black;
+    margin-top: 2px;
 }
 .main .left .shopsinfo {
     width: 100%;
     height: 400px;
-    background-color: saddlebrown;
+    background-color:black;
+    color: white;
     overflow: auto;
 }
 .main .left .shopsinfo span{
-    padding-left: 50px;
-}
-
-.main>.left>span{
     display: inline-block;
-    width: 70px;
-    background-color: violet;
+    overflow: hidden;
+    width: 60px;
+    /* background-color: turquoise; */
+    padding: 0px 10px;
+    white-space: nowrap;
     text-align: center;
 }
+.main>.left>.mid {
+    border: 2px solid black;
+    margin-top: 2px;
+}
+.main>.left>.mid>span{
+    display: inline-block;
+    width: 90px;
+    height: 25px;
+    background-color: black;
+    text-align: center;
+    color: white;
+    border-radius: 8px;
+}
 .main .left input {
-   width: 300px;
+   width: 800px;
    height: 25px;
    margin-top: 2px;
    text-align: center;
+   background-color:white;
+   color: black;
 }
 
 .right .userdiv{
     width: 100%;
-    height: 100%;
-    background-color:wheat;
+    height: 96%;
+    background-color:white;
     overflow: auto;
 }
