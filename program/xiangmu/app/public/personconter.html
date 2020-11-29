@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    <link rel="stylesheet" href="./personcssrj/personcss.css">
+    <link rel="stylesheet" href="../public/personjsrj/personrj.js">
+</head>
+<body>
+<div class="tuxing1"></div>
+<div class="tuxing2"></div>
+<div class="tuxing3"></div>
+<div class="tuxing4"></div>
+<div class="tuxing5"></div>
+<div class="title">
+    <p class="titletxt">花之物语</p>  <input type="text" value="请输入" class="inp"><button>搜索</button>
+</div>
+<div class="bigbox">
+    <div class="box">
+  <div class="headpic">头像</div>
+        
+      <span class="nicheng">昵&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;称</span><span class="username">花花</span><br>
+      <span class="qianming">个性签名</span><span class="usertxt">你好</span>
+  
+  <div class="business">
+     <p class="myform">我的订单</p>
+     <a></p><span class="txt-p1">待付款</span></a>
+     <a></p><span class="txt-p2">待发货<span class="between1">|</span></span></a>
+     <a></p><span class="txt-p3">待收货<span class="between2">|</span></span></a>
+     <a></p><span class="txt-p4">评价<span class="between3">|</span></span></a>
+     <a></p><span class="txt-p5">售后<span class="between4">|</span></span></a>
+  </div>
+  
+  <a href= "/public/changeperinfo.html"><div class="shezhi">设置</div></a>
+</div>
+    </div>
+    <script>
+        
+        $(document).ready(function(){
+            $(".titletxt").fadeIn(3000);
+            let tuxing1 = $(".tuxing1");
+            let tuxing2 = $(".tuxing2");
+            let tuxing3 = $(".tuxing3");
+            let tuxing4 = $(".tuxing4");
+            let tuxing5 = $(".tuxing5");
+            tuxing1.fadeIn(300);
+            tuxing2.fadeIn(600);
+            tuxing3.fadeIn(800);
+            tuxing4.fadeIn(900);
+            tuxing5.fadeIn(1000);
+            tuxing1.animate({
+                top:'730px',
+                opacity:'0.6',
+                
+            },15000)
+            tuxing2.animate({
+                top:'720px',
+                opacity:'0.5',
+                
+            },10000)
+            tuxing3.animate({
+                top:'730px',
+                opacity:'0.5',
+                
+            },9000)
+            tuxing4.animate({
+                top:'730px',
+                opacity:'0.3',
+                
+            },8000)
+            tuxing5.animate({
+                top:'750px',
+                opacity:'0.3',
+                
+            },10000)
+
+            tuxing1.fadeOut(900)
+            tuxing2.fadeOut(500)
+            tuxing3.fadeOut(600)
+            tuxing4.fadeOut(700)
+            tuxing5.fadeOut(800)
+        });
+
+        
+    </script>
+</body>
+</html>

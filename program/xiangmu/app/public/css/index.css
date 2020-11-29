@@ -14,7 +14,7 @@ a {
 
 /* body这里是先调试  待会可能会改 */
 body {
-    height: 2000px;
+    /* height: 2000px; */
     background-color: rgb(222, 251, 252);
 }
 
@@ -122,14 +122,17 @@ body {
     height: 150px;
     border-bottom: 2px solid #ff6700;
 }
+
 .nav-search::after {
     content: "";
     display: block;
     clear: both;
 }
+
 .sc-left {
     float: left;
 }
+
 .sc-right {
     float: right;
     width: 600px;
@@ -144,10 +147,12 @@ body {
     background-repeat: no-repeat; */
     height: 110px;
 }
+
 .logo img {
     width: 230px;
     height: 120px;
 }
+
 .logo-text {
     font-size: 20px;
     color: #a699d6;
@@ -155,6 +160,7 @@ body {
     font-family: 'sans-serif';
     /* font-family: '微软雅黑','宋体', '黑体', Arial, Helvetica, sans-serif; */
 }
+
 .searchbox {
     width: 500px;
     height: 50px;
@@ -173,15 +179,18 @@ body {
     margin-left: 5px;
     box-sizing: border-box;
 }
+
 .sc-text {
     position: relative;
     left: 30px;
     top: 14px;
     font-size: 12px;
 }
+
 .sc-text a:hover {
     color: #ff6700;
 }
+
 .sc-text span {
     padding: 0 6px;
 }
@@ -259,6 +268,7 @@ body {
     left: 310px;
     top: 225px;
 }
+
 .btnall {
     width: 250px;
     height: 50px;
@@ -269,6 +279,7 @@ body {
     border: 1px solid #000;
     color: #333;
 }
+
 .myul {
     display: block;
 }
@@ -284,6 +295,7 @@ body {
     border-bottom: 1px solid #ccc;
 
 }
+
 .myul li p {
     display: inline-block;
     margin: 8px 0px;
@@ -294,6 +306,7 @@ body {
 .myul li span:hover {
     color: #ff6700;
 }
+
 /* <!-- 鲜花 送人种类 --> */
 .meaning {
     width: 1200px;
@@ -305,6 +318,7 @@ body {
 .mean-right {
     margin-left: 10px;
 }
+
 .right-text {
     color: rgb(71, 48, 202);
 }
@@ -326,10 +340,96 @@ body {
     border: 1px solid #ff6700;
     background-color: #fff;
 }
+
 .backtop li a {
     font-size: 14px;
     color: #000;
 }
+
 .backtop li:hover a {
+    color: #ff6700;
+}
+
+/* 特价广告区域 */
+.advertising {
+    width: 1200px;
+    margin: 30px auto;
+    /* background-color: lightseagreen; */
+}
+.advertising img {
+    margin-left: 6px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 底部 */
+.last {
+    width: 100%;
+    height: 319px;
+    background-color: #000;
+    padding-bottom: 50px;
+    margin-top: 50px;
+}
+
+.last-second-ul {
+    width: 1519px;
+    height: 49px;
+    border-bottom: 1px solid #3d424a;
+    box-sizing: border-box;
+    padding: 15px 0;
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.last-second-a {
+    color: #b1b3b9;
+    padding: 10px;
+}
+
+.last-second-a:hover {
+    color: #ff6700;
+}
+
+.last-second-li span {
+    color: #b1b3b9;
+}
+
+/* 最后 */
+.the-last-one {
+    width: 1000px;
+    height: 180px;
+    margin: 0 auto;
+    font-size: 13px;
+    color: #b1b3b9;
+    margin-top: 40px;
+}
+
+.the-last-one>p {
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+}
+
+.the-last-one>p a {
+    color: #b1b3b9;
+}
+
+.the-last-one>p a:hover {
     color: #ff6700;
 }

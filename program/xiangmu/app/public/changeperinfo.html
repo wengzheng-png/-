@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./personcssrj/changeperinfo.css">
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    <script src='https://unpkg.com/axios/dist/axios.min.js'></script>
+    <script src="./personjsrj/changepersonrj.js"></script>
+</head>
+<body>
+    
+<div class="tuxing2"></div>
+<div class="tuxing3"></div>
+<div class="tuxing4"></div>
+<div class="tuxing5"></div>
+    
+<div class="title">
+    <p class="titletxt">花之物语</p>  <input type="text" value="请输入" class="inp"><button>搜索</button>
+</div>
+
+        </div>
+    <div class="bigbox">
+        <div class="box">
+            <p>基本资料</p>
+            <div class="mycontent">
+                <span class="headpic">我的头像</span><input type="file" class="touxiang" value=""><br>
+                <span class="nicheng">昵&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;称</span><input type="text" value="" class="username" value=""><br>
+                <span class="sex">性别</span><span class="nan">男</span><input type="radio" name="man" class="man" value="nan"><span class="nv">女</span><input type="radio" name="man" class="man" value="nv"><br>
+                <span class="birth">出生日期</span><input type="text" class="birthday" value="" name="birthday"><br>
+                <span class="gexing">个性签名</span><input type="text" class="usertxt" value="" name="usertxt"><br>
+                <button onclick="fn()" class="btn">保存</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        
+        $(document).ready(function(){
+            $(".titletxt").fadeIn(3000);
+            let tuxing1 = $(".tuxing1");
+            let tuxing2 = $(".tuxing2");
+            let tuxing3 = $(".tuxing3");
+            let tuxing4 = $(".tuxing4");
+            let tuxing5 = $(".tuxing5");
+            tuxing1.fadeIn(300);
+            tuxing2.fadeIn(600);
+            tuxing3.fadeIn(800);
+            tuxing4.fadeIn(900);
+            tuxing5.fadeIn(1000);
+            tuxing1.animate({
+                top:'700px',
+                opacity:'0.6',
+                
+            },15000)
+            tuxing2.animate({
+                top:'720px',
+                opacity:'0.5',
+                
+            },10000)
+            tuxing3.animate({
+                top:'730px',
+                opacity:'0.5',
+                
+            },9000)
+            tuxing4.animate({
+                top:'730px',
+                opacity:'0.3',
+                
+            },8000)
+            tuxing5.animate({
+                top:'700px',
+                opacity:'0.3',
+                
+            },10000)
+
+            tuxing1.fadeOut(900)
+tuxing2.fadeOut(500)
+tuxing3.fadeOut(600)
+tuxing4.fadeOut(700)
+tuxing5.fadeOut(800)
+        });
+
+    </script>
+   
+</body>
+</html>

@@ -43,4 +43,8 @@ module.exports = app => {
   router.get('/getVerif', controller.yrhome.getVerif);//获取验证码接口
 
   router.post('/login', controller.yrhome.login);//登录接口
+
+  
+
+
 };
